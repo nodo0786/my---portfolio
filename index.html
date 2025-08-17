@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naureen Naaz | Portfolio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; background: #0f172a; color: #f8fafc; scroll-behavior: smooth; }
+
+    /* Navbar */
+    header { position: fixed; width: 100%; background: rgba(15,23,42,0.95); padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; }
+    .logo { font-size: 22px; font-weight: bold; color: #38bdf8; animation: glow 2s infinite alternate; }
+    @keyframes glow { from { text-shadow: 0 0 10px #38bdf8; } to { text-shadow: 0 0 20px #0ea5e9; } }
+    nav ul { list-style: none; display: flex; }
+    nav ul li { margin: 0 15px; }
+    nav ul li a { color: white; text-decoration: none; transition: 0.3s; }
+    nav ul li a:hover { color: #facc15; }
+
+    /* Hero Section with Animated Gradient */
+    .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; 
+      background: linear-gradient(270deg,#0ea5e9,#3b82f6,#9333ea,#f43f5e);
+      background-size: 800% 800%; 
+      animation: gradientBG 10s ease infinite;
+      color: white; padding: 0 20px; }
+    @keyframes gradientBG {
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
+    .hero h1 { font-size: 3rem; animation: fadeIn 2s ease; }
+    .highlight { color: #facc15; }
+    .btn { margin-top: 20px; padding: 12px 25px; background: #facc15; color: black; border-radius: 25px; text-decoration: none; font-weight: bold; transition: 0.3s; box-shadow: 0 0 10px #facc15; }
+    .btn:hover { background: #fde047; transform: scale(1.1); box-shadow: 0 0 20px #fde047; }
+
+    /* Sections */
+    section { padding: 100px 50px; text-align: center; opacity: 0; transform: translateY(40px); transition: 1s; }
+    section.show { opacity: 1; transform: translateY(0); }
+    h2 { margin-bottom: 20px; font-size: 2rem; color: #38bdf8; animation: pulse 2s infinite; }
+    @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+
+    /* Skills */
+    .skills-container { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
+    .skill-card { background: #1e293b; padding: 15px 25px; border-radius: 8px; transition: 0.3s; cursor: pointer; box-shadow: 0 0 10px rgba(0,0,0,0.3); }
+    .skill-card:hover { transform: scale(1.15) rotate(-2deg); background: linear-gradient(135deg,#3b82f6,#9333ea); color: #fff; box-shadow: 0 0 25px #9333ea; }
+
+    /* Projects */
+    .project-container { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+    .project-card { background: #1e293b; padding: 20px; border-radius: 10px; transition: 0.3s; flex: 1; min-width: 250px; }
+    .project-card:hover { transform: translateY(-10px) scale(1.05); background: linear-gradient(135deg,#0ea5e9,#38bdf8); color: #fff; box-shadow: 0 0 25px #38bdf8; }
+    .project-card a { display: inline-block; margin-top: 10px; color: #facc15; text-decoration: none; font-weight: bold; }
+
+    /* Contact */
+    form { display: flex; flex-direction: column; gap: 10px; max-width: 400px; margin: auto; }
+    input, textarea, button { padding: 12px; border: none; border-radius: 5px; }
+    button { background: #38bdf8; color: white; font-weight: bold; cursor: pointer; transition: 0.3s; }
+    button:hover { background: #0ea5e9; transform: scale(1.05); box-shadow: 0 0 15px #0ea5e9; }
+
+    .socials { margin-top: 20px; }
+    .socials a { margin: 0 10px; color: #f43f5e; text-decoration: none; font-weight: bold; }
+    .socials a:hover { color: #facc15; text-shadow: 0 0 10px #facc15; }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav>
+      <h2 class="logo">Naureen Naaz</h2>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <h1>Hi, I'm <span class="highlight">Naureen Naaz</span></h1>
+    <p class="typing"></p>
+    <a href="#projects" class="btn">View My Work</a>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I’m an intern in MERN Stack Full Stack Web Development.  
+      I have beginner-level knowledge of Node.js and React, and I’m passionate about building dynamic, user-friendly web applications.
+      i have also completed my Data analytics intetrnship in which i used Excel,PowerBI,Tableu and python,AIML
+    </p>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2>My Skills</h2>
+    <div class="skills-container">
+      <div class="skill-card">HTML</div>
+      <div class="skill-card">CSS</div>
+      <div class="skill-card">JavaScript</div>
+      <div class="skill-card">Node.js</div>
+      <div class="skill-card">React</div>
+      <div class="skill-card">MongoDB</div>
+      <div class="skill-card">Express.js</div>
+      <div class="skill-card">Git/GitHub</div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-container">
+      <div class="project-card">
+        <h3>Project One</h3>
+        <p>A MERN stack app (replace with your project)</p>
+        <a href="#">GitHub</a>
+      </div>
+      <div class="project-card">
+        <h3>Project Two</h3>
+        <p>A React app (replace with your project)</p>
+        <a href="#">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+    <div class="socials">
+      <a href="#">LinkedIn</a>
+      <a href="#">GitHub</a>
+    </div>
+  </section>
+
+  <script>
+    // Typing Effect
+    const typingText = document.querySelector(".typing");
+    const phrases = ["MERN Stack Developer", "Web Enthusiast", "Learner"];
+    let i = 0, j = 0, currentPhrase = [], isDeleting = false;
+
+    function loop() {
+      typingText.textContent = currentPhrase.join("");
+      if (i < phrases.length) {
+        if (!isDeleting && j <= phrases[i].length) {
+          currentPhrase.push(phrases[i][j]);
+          j++;
+        }
+        if (isDeleting && j <= phrases[i].length) {
+          currentPhrase.pop();
+          j--;
+        }
+        if (j == phrases[i].length) { isDeleting = true; setTimeout(loop, 1000); return; }
+        if (isDeleting && j === 0) { currentPhrase = []; isDeleting = false; i++; if (i == phrases.length) i = 0; }
+      }
+      setTimeout(loop, isDeleting ? 50 : 150);
+    }
+    loop();
+
+    // Scroll Reveal
+    const sections = document.querySelectorAll("section");
+    window.addEventListener("scroll", () => {
+      sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if(top < window.innerHeight - 100){
+          sec.classList.add("show");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
